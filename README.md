@@ -39,7 +39,7 @@ A static, responsive clone of the **Netflix landing page** built using **HTML** 
 - Replicates Netflix’s **banner, navigation, and content sections**
 
 #### **Repository**  
-🔗 [Netflix Clone Repo](https://github.com/Anshu-bhatt/Front-End-Projects/tree/main/Netflix%20Clone)
+🔗 [Netflix Clone Repo](https://github.com/Anshu-bhatt/Summer-Internship/tree/main/netflix%20UI)
 
 ---
 
@@ -54,7 +54,7 @@ A **personal productivity tool** to track daily habits and maintain streaks.
 - Explored **MySQL integration** for persistent data storage  
 
 #### **Repository**  
-🔗 [Habit Tracker Repo](https://github.com/Anshu-bhatt/habit-tracker)
+🔗 [Habit Tracker Repo](https://github.com/Anshu-bhatt/Summer-Internship/tree/main/habit-tracker)
 
 ---
 
@@ -83,17 +83,17 @@ A **machine learning-based web application** that classifies SMS messages as **s
 | F1-Score    | 95.5% |
 
 #### **Repository**  
-🔗 [Spam-Ham Classifier Repo](https://github.com/Anshu-bhatt/spam-ham-classifier)
+🔗 [Spam-Ham Classifier Repo](https://github.com/Anshu-bhatt/Summer-Internship/tree/main/Spam-ham%20Classifier)
 
 ---
 
 ## 📂 Folder Structure  
 Summer-Internship-2025/
-│── Netflix-Clone/ # Frontend UI clone project
-│── Habit-Tracker/ # Habit tracking web app
-│── Spam-Ham-Classifier/ # ML-integrated Flask app
-│── README.md # Internship overview
-│── Report.pdf # Internship final report
+  │── Netflix-Clone/ # Frontend UI clone project
+  │── Habit-Tracker/ # Habit tracking web app
+  │── Spam-Ham-Classifier/ # ML-integrated Flask app
+  │── README.md # Internship overview
+  │── Report.pdf # Internship final report
 
 ---
 
@@ -124,7 +124,6 @@ I’m grateful to **Z Web Solutions** and my mentor **Mr. Ayaz Meman** for guidi
 
 ## 📬 Connect With Me  
 - **GitHub:** [Anshu-bhatt](https://github.com/Anshu-bhatt)  
-- **LinkedIn:** *(Add your LinkedIn link here)*  
-- **Email:** *(Add your email here)*  
-
+- **LinkedIn:** [Anshu Bhatt](www.linkedin.com/in/anshu-bhatt-00aa0a278)
+  
 ---
