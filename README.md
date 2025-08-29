@@ -87,16 +87,6 @@ A **machine learning-based web application** that classifies SMS messages as **s
 
 ---
 
-## 📂 Folder Structure  
-Summer-Internship-2025/
-  │── Netflix-Clone/ # Frontend UI clone project
-  │── Habit-Tracker/ # Habit tracking web app
-  │── Spam-Ham-Classifier/ # ML-integrated Flask app
-  │── README.md # Internship overview
-  │── Report.pdf # Internship final report
-
----
-
 ## 📚 Learning Outcomes  
 During this internship, I gained practical experience in:  
 - Designing **responsive UIs** with HTML, CSS, and JavaScript  
