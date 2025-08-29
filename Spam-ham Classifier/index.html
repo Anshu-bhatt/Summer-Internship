@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam-Ham Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: linear-gradient(120deg, #006a4e 0%, #a8e063 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+            color: #006a4e;
+        }
+        .container {
+            background: #fff;
+            max-width: 400px;
+            margin: 60px auto 0 auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            text-align: center;
+            animation: fadeIn 1s;
+            color: #006a4e;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #006a4e;
+            margin-bottom: 18px;
+            font-size: 2.1rem;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        form {
+            margin-bottom: 18px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            border-radius: 8px;
+            border: 1px solid #006a4e;
+            padding: 10px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border 0.2s;
+            color: #006a4e;
+            font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+        }
+        textarea:focus {
+            border: 1.5px solid #006a4e;
+            outline: none;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #a8e063 0%, #006a4e 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(253,160,133,0.12);
+            transition: background 0.2s, transform 0.1s;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #006a4e 0%, #a8e063 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .result {
+            margin-top: 18px;
+            padding: 14px 0;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            animation: popIn 0.7s;
+            color: #006a4e;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .result.spam {
+            background: #eaffea;
+            color: #006a4e;
+            border: 1.5px solid #006a4e;
+        }
+        .result.ham {
+            background: #eaffea;
+            color: #006a4e;
+            border: 1.5px solid #27ae60;
+        }
+        .loader {
+            display: none;
+            margin: 0 auto 10px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #fda085;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
+        window.onload = function() {
+            var form = document.querySelector('form');
+            form.onsubmit = function() {
+                showLoader();
+            };
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Spam or Ham Classifier</h1>
+        <form method="POST" autocomplete="off">
+            <textarea name="message" placeholder="Type your message here..." required></textarea><br>
+            <button type="submit">Classify</button>
+        </form>
+        <div id="loader" class="loader"></div>
+        {% if prediction %}
+        <div class="result {{ prediction|lower }}">
+            Result: <strong>{{ prediction }}</strong>
+        </div>
+        {% elif request.method == 'POST' %}
+        <div class="result">
+            No prediction could be made. Please try again.
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
